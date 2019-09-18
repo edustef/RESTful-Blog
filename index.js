@@ -27,8 +27,6 @@ const blogSchema = new mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema);
 
-console.log(process.env.PORT);
-
 //Routes
 //Redirect to home
 app.get('/', (req, res) => {
@@ -108,8 +106,6 @@ app.delete('/blogs/:id', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server is running!');
 });
