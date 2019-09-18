@@ -1,0 +1,14 @@
+.menu {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+.menu > a {
+  font-size: 1.1rem;
+}
+
+.menu + * {
+  margin-top: 64px !important;
+}
+
+.inline-form {
+  display: inline;
+}
