@@ -63,6 +63,9 @@ router.get("/blogs/:id/edit", (req, res) => {
 //POST UPDATE BLOG
 router.put("/blogs/:id", (req, res) => {
   req.body.blog.body = req.sanitize(req.body.blog.body);
+  if (req.body.blog.image == "") {
+    req.body.blog.image = undefined;
+  }
   Blog.findByIdAndUpdate(req.params.id, req.body.blog, (err, updatedBlog) => {
     if (err) {
       res.redirect("blogs");
