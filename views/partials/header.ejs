@@ -5,18 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="icon" href="https://www.freepngimg.com/download/social_media/58966-text-blogger-rectangle-area-png-image-high-quality.png">
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <div class="ui secondary pointing fixed menu">
+  <div onclick="toggleActive(event)" class="ui secondary pointing fixed menu">
     <a href="/">
       <div class="header item"><i class="blogger b icon"></i>Blog Site</div>
     </a>
-    <a href="/" class="item">Home</a>
-    <a href="/blogs/new" class="item">New</a>
-
+    <a href="/" class="<%= title == "Home" ? "item active" : "item" %>">Home</a>
+    <a href="/blogs/new" class="<%= title == "New Blog" ? "item active" : "item" %>">New Blog</a>
+    <a href="/contact" class="<%= title == "Contact" ? "item active" : "item" %>">Contact</a>
+    <a href="/about" class="<%= title == "About" ? "item active" : "item" %>">About</a>
+    <a href="/what_is_new" class="<%= title == "What\'s new?" ? "item active" : "item" %>">What's new?</a>
   </div>
