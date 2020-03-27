@@ -20,7 +20,9 @@ router.get("/blogs", (req, res) => {
 //POST NEW BLOG
 router.post("/blogs", (req, res) => {
   req.body.blog.body = req.sanitize(req.body.blog.body);
-  req.body.blog.image = undefined;
+  if (req.body.blog.image == "") {
+    req.body.blog.image = undefined;
+  }
   Blog.create(req.body.blog, (err, newBlog) => {
     if (err) {
       res.render("new");
