@@ -14,6 +14,7 @@ const CONNECTION_URL =
   process.env.MONGODB_URI || "mongodb://localhost/restful_blog_app";
 
 mongoose.set("useUnifiedTopology", true);
+
 mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true
 });
@@ -42,6 +43,6 @@ app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(PORT, () => {
   console.log("Server is running!");
 });
